@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Syuku</title>
+    <title>TaskApp2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <%= yield %>
+<body>
+   <%= render 'layouts/header' %>
+   <main class="main"> 
+   <% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+ <% end %>
+     <%= yield %> 
+   </main>
+   <%= render 'layouts/footer' %>
   </body>
 </html>

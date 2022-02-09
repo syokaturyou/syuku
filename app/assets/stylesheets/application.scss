@@ -1,0 +1,114 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+ @import "bootstrap";
+
+ header {
+   min-width: 1000px;
+   min-height: 90px;
+   background-color: black;
+   color: white;
+ }
+ 
+  footer {
+   min-width: 1000px;
+   min-height: 180px;
+   background-color: black;
+   color: white;
+   text-align: center;
+ }
+
+ .main {
+ min-height: 600px;
+ height: 900px;
+ background-repeat:  no-repeat;
+ background-color: white;
+}
+
+.nyu {
+ width: 150px;
+}
+.nyu2 {
+ width: 280px;
+}
+
+.top{
+ min-height: 550px;
+ width: 100%;
+ background-image: image-url("img_cover_top.png");
+ padding: 10px;
+ 
+  .form-area{
+   min-height: 250px;
+   width: 450px;
+   border-radius: 10px;
+   background-color: white;
+     p {
+       font-size: 180%;
+       margin-top: 0;
+       margin-bottom: 1rem;
+    }
+   }
+}
+
+.under {
+ left: 30%;
+ display: flex;
+ top: 80%;
+ min-height: 350px;
+ background-color: white;
+ 
+ .h1{
+ min-width: 700px;
+ min-height: 100px;
+}
+ 
+ img {
+    vertical-align: middle;
+    border-style: none;
+    width: 200px;
+    height: 300px;
+}
+ 
+}
+
+.left {
+ width: 30%;
+ height: 100%;
+ background-color: gray;
+ text-align: center;
+}
+
+// .right {
+//  width: 30%;
+//  height: 100%;
+//  background-color: gray;
+//  text-align: center;
+// }
+
+// .div#content {
+// background-color: #99cc33;
+// width: 760px;
+// overflow: hidden;
+// }
+
+// .col-lg-2 {
+//     -ms-flex: 0 0 16.666667%;
+//     flex: 0 0 16.666667%;
+//     max-width: 16.666667%;
+//     background-color: gray;
+// }
+

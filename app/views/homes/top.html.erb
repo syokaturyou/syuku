@@ -1,0 +1,20 @@
+
+<div class="top">
+   </br>
+    <div class="form-area">
+     <p>Potepan Shareでまだ体験したことのない旅をしよう</p>
+     エリア
+     <input type="text" name="area" id="area" value="" class="nyu2" placeholder="東京">
+     </br>
+     <%= link_to '探す', root_path, class: 'btn btn-primary' %>
+    </div>
+</div>
+
+    <div class="under">
+    　<h1>おすすめのエリア</h1>
+      </br>
+    　 <%= link_to image_tag("img_tokyo.png"), root_path, size:'130x100' %>
+     　<%= link_to image_tag("img_osaka.png"), root_path, size:'130x100' %>
+     　<%= link_to image_tag("img_kyoto.png"), root_path, size:'130x100' %>
+     　<%= link_to image_tag("img_sapporo.png"), root_path, size:'130x100' %>
+    </div>
