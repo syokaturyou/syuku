@@ -1,0 +1,25 @@
+<div class="row">
+  <%= link_to 'アカウント', account_path %>
+  </br>
+  <%= link_to 'プロフィール', profile_path, data: {"turbolinks"=>false} %>
+ </div>
+  
+
+<h3>ユーザー一覧</h3>
+
+ <table>
+  <tr>
+   <th>id</th>
+   <th>名前</th>
+   <th>自己紹介</th>
+   <th>アイコン画像</th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+   <td><%= user.id %></td>  
+   <td><%= user.name %></td> 
+   <td><%= user.profile %></td>
+   <td><%= attachment_image_tag user, :profileimage, fallback: "no_image_logo.png", size: '80x80' %></td>
+   </tr>
+   <% end %>
+ </table>

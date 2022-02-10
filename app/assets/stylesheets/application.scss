@@ -34,8 +34,11 @@
  .main {
  min-height: 600px;
  height: 900px;
- background-repeat:  no-repeat;
  background-color: white;
+}
+
+ .notice {
+    background-color: lightBlue;
 }
 
 .nyu {
@@ -49,6 +52,7 @@
  min-height: 550px;
  width: 100%;
  background-image: image-url("img_cover_top.png");
+ background-repeat:  no-repeat;
  padding: 10px;
  
   .form-area{

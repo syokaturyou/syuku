@@ -1,0 +1,26 @@
+<div class="left">
+  <%= link_to 'アカウント', account_path %>
+  </br>
+  <%= link_to 'プロフィール', profile_path, data: {"turbolinks"=>false} %>
+</div>
+
+<%= render "shared/bubun" %>
+
+<div class="right">
+ <h3>アカウント</h3>
+  <table>
+   <tbody>
+    <tr>
+     <th>メールアドレス</th>
+     <td><%= @user.email %></td>
+    </tr>
+    <tr>
+     <th>パスワード</th>
+     <td><%= @user.password %></td>
+    </tr>
+   </tbody>
+  </table>
+  
+  <%= link_to '編集する', edit_user_path(current_user), class: 'btn btn-primary', data: {"turbolinks"=>false} %>
+</div>
+  

@@ -1,0 +1,19 @@
+<h3>アカウント編集</h3>
+
+<table>
+ <tbody>
+  <%= form_with model:@user, url: user_path(@user), local: true do |f| %>
+  <tr>
+   <th><%= f.label :メールアドレス %></th>
+   <td><%= f.email_field :email, autofocus: true, autocomplete: "email", maxlength: "80", size: "80" %></td>
+  </tr>
+  <tr>
+   <th>現在のパスワード</th>
+   <td><%= @user.encrypted_password %></td>
+  </tr>
+  <tr>
+   <td><%= f.submit "更新", class: 'btn btn-primary' %></td>
+  <% end %>
+  </tr>
+ </tbody>
+</table>
