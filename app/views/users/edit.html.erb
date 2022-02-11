@@ -1,3 +1,6 @@
+<%= render "users/shared/bubun" %>
+
+<div class="row">
 <h3>アカウント編集</h3>
 
 <table>
@@ -5,11 +8,19 @@
   <%= form_with model:@user, url: user_path(@user), local: true do |f| %>
   <tr>
    <th><%= f.label :メールアドレス %></th>
-   <td><%= f.email_field :email, autofocus: true, autocomplete: "email", maxlength: "80", size: "80" %></td>
+   <td><%= f.email_field :email, autofocus: true, autocomplete: "email", maxlength: "50", size: "50" %></td>
   </tr>
   <tr>
-   <th>現在のパスワード</th>
-   <td><%= @user.encrypted_password %></td>
+   <th><%= f.label :変更後パスワード（変更する場合のみ入力） %></th>
+   <td><%= f.password_field :password, autofocus: true, autocomplete: "new-password", maxlength: "50", size: "50" %></td>
+  </tr> 
+  <tr>
+   <th><%= f.label :パスワード確認用（変更する場合のみ入力）%></th>
+   <td><%= f.password_field :password_confirmation, autocomplete: "new-password", maxlength: "50", size: "50" %></td>
+  </tr>
+  <tr>
+   <th><%= f.label :現在のパスワード）%></th>
+   <td><%= f.password_field :encrypted_password, autocomplete: "new-password", maxlength: "50", size: "50" %></td>
   </tr>
   <tr>
    <td><%= f.submit "更新", class: 'btn btn-primary' %></td>
@@ -17,3 +28,4 @@
   </tr>
  </tbody>
 </table>
+</div>

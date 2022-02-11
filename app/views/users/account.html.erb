@@ -1,10 +1,4 @@
-<div class="left">
-  <%= link_to 'アカウント', account_path %>
-  </br>
-  <%= link_to 'プロフィール', profile_path, data: {"turbolinks"=>false} %>
-</div>
-
-<%= render "shared/bubun" %>
+<%= render "users/shared/bubun" %>
 
 <div class="right">
  <h3>アカウント</h3>
@@ -17,6 +11,10 @@
     <tr>
      <th>パスワード</th>
      <td><%= @user.password %></td>
+    </tr>
+    <tr>
+     <th>パスワード</th>
+     <td><%= @user.encrypted_password %></td>
     </tr>
    </tbody>
   </table>
