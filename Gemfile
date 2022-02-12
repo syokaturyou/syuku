@@ -68,12 +68,13 @@ gem 'pry-rails'
 gem 'devise'
 gem 'kaminari','~> 1.2.1'
 gem 'bootstrap', '~> 4.5'
+gem 'bootstrap-sass', '3.4.1'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 # gem 'config'
 gem 'font-awesome-sass', '~>5.13'
 # gem 'rubocop', require:false
 # gem 'rubocop-rails', require:false
-# gem 'jquery-rails'
+gem 'jquery-rails'
 # gem 'carrierwave', '~> 2.0' # 画像サイズ用
-
+gem'autoprefixer-rails'
