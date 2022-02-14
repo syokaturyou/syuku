@@ -20,10 +20,11 @@ class UsersController < ApplicationController
     @user = current_user
     @user.update(user_params)
     @user.update(profileimage: nil) if params[:image_delete].present? # 画像なしの場合に既存画像削除
-    if @user.changed
-    redirect_to root_path
+    if @user.update(user_params)
+     flash[:notice] = "ユーザー情報を更新しました"
+     redirect_to profile_path
     else
-    redirect_to profile_path
+     redirect_to root_path
     end
    end
    

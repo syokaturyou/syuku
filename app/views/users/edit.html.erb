@@ -29,14 +29,14 @@
    <td><%= f.label :現在のパスワード）%></td>
   </tr>
   <tr>
-   <td><%= f.password_field :encrypted_password, autocomplete: "new-password", maxlength: "50", size: "50" %></td>
+   <td><%= f.password_field :current_password, autocomplete: "current-password", maxlength: "50", size: "50" %></td>
   </tr>
   <tr>
    <td><%= f.submit "更新", class: 'btn btn-primary' %></td>
   <% end %>
   </tr>
   <tr>
-   <td><%= link_to '戻る', account_path(current_user), class: "btn btn-outline-primary" %></td>
+   <td><%= link_to '戻る', account_path, class: "btn btn-outline-primary" %></td>
   </tr>
  </tbody>
 </table>

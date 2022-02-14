@@ -9,20 +9,24 @@
  <h3>プロフィール</h3>
   <table>
    <tbody>
+    <tr>
+     <td></td>
+     <td><%= attachment_image_tag @user, :profileimage, fallback: "no_image_logo.png", size: '80x80', class: "aicon" %></td>
+    </tr>
     <%= form_with model:@user, url: user_path(@user), local: true do |f| %>
      <tr>
-      <td><%= f.label :アイコン画像 %></td>
-      <td><%= attachment_image_tag @user, :profileimage, fallback: "no_image_logo.png", size: '120x120' %>
+      <th><%= f.label :アイコン画像 %></th>
+      <td>
         <label><%= check_box_tag :image_delete %>画像なし</label>
         <label><%= f.attachment_field :profileimage %></label>
       </td>
      </tr>
     <tr>
-     <td><%= f.label :名前 %></td>
+     <th><%= f.label :名前 %></th>
      <td><%= f.text_field :name, autofocus: true, required: true, maxlength: "40", size: "40" %></td>
     </tr>
     <tr>
-     <td><%= f.label :自己紹介 %></td>
+     <th><%= f.label :自己紹介 %></th>
      <td><%= f.text_area :profile, autofocus: true,  size: '40x5' %></td>
     </tr>
     <tr>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   
   
  resources :users, only: [:index, :edit, :update]
+# resources :users, only: [:index, :edit, :update, :destroy]
  get 'users/account' => 'users#account', as: 'account'
  get 'users/profile' => 'users#profile', as: 'profile'
   devise_for :users, controllers: {
