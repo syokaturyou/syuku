@@ -5,37 +5,21 @@
 <input type="text" name="area" id="area" value="" class="nyu" placeholder="エリア">
 <input type="text" name="keyword" id="keyword" value="" class="nyu" placeholder="キーワード">
 
-
 <% if user_signed_in? %>
- <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+
  <%= current_user.name %>
- 
- <li class="dropdown">
    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-    <%= attachment_image_tag current_user, :profileimage_id, fallback: "no_image_logo.png", size: '180x120' %>
-    <span class="caret"></span></a>
+    <%= attachment_image_tag current_user, :profileimage, fallback: "no_image_logo.png", size: '100x80' %>
+    </a>
    <ul class="dropdown-menu">
-     <li><a href="#"><%= link_to 'ルーム登録', account_path(current_user) %></a></li>
-     <li><a href="#"><%= link_to '予約済みルーム一覧', account_path(current_user) %></a></li>
+     <li><a href="#"><%= link_to 'ルーム登録', account_path(current_user), class: 'link' %></a></li>
+     <li><a href="#"><%= link_to '予約済みルーム一覧', account_path(current_user), class: 'link' %></a></li>
      <li role="separator" class="divider"></li>
-     <li class="dropdown-header">header</li>
-     <li><a href="#"><%= link_to '登録済みルーム一覧', account_path(current_user) %></a></li>
-     <li><a href="#"><%= link_to '設定', account_path(current_user) %></a></li>
-     <li><a href="#"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %></a></li>
+     <li><a href="#"><%= link_to '登録済みルーム一覧', account_path(current_user), class: 'link' %></a></li>
+     <li><a href="#"><%= link_to '設定', account_path(current_user), class: 'link' %></a></li>
+     <li><a href="#"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'link' %></a></li>
    </ul>
- </li>
- 
- <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown button
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-</div>
- 
+
  <% else %>
  <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-primary' %>
  <%= link_to '登録する', new_user_registration_path, class: 'btn btn-secondary' %>

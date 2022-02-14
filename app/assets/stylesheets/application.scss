@@ -14,7 +14,7 @@
  *= require_self
  */
  
- @import "bootstrap-sprockets";
+ // @import "bootstrap-sprockets";
  @import "bootstrap";
 
  header {
@@ -129,7 +129,6 @@
   }
 }
 
-
   .editview{
    text-align: center;
    min-height: 600px;
@@ -138,4 +137,21 @@
     width: 100%;
    }
   }
-
+  
+  a:link {
+   color: #000000;
+   text-decolation: none;
+  }
+  
+  .dropdown-menu {
+   padding: 15px;
+  }
+  
+ .link {
+    text-decoration: none;
+    color: black; 
+  }
+  .link:hover {
+    text-decoration: none;
+    color: black; 
+  }
