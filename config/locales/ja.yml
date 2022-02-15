@@ -77,3 +77,16 @@ ja:
       too_long: "は%{count}文字以下に設定して下さい。"
       invalid: "は有効でありません。"
       confirmation: "が内容とあっていません。"
+      
+      
+ja:
+      activerecord:
+        models:
+          room: ルーム
+        attributes:
+          room:
+            roomname: ルーム名
+            roomprofile: ルーム紹介
+            roomimage_id: ルーム画像
+            price: 料金
+            address: 住所

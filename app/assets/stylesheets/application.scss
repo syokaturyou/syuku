@@ -49,12 +49,6 @@
  width: 300px;
 }
 
-// .user-nav {
-//     width: 100%;
-//     box-sizing: border-box;
-//     padding: 30px 15px;
-// }
-
 .top{
  min-height: 550px;
  width: 100%;
@@ -119,8 +113,9 @@
         background-color: #e2e2e2;
         border-left: 2px solid #e2e2e2;
       .aaaa {
-        margin: 40px;
+        margin: 40px 100px;
         border: 2px solid #e2e2e2;
+        width: 650px;
         background-color: white;
         min-height: 500px;
         height: 700px;
@@ -160,3 +155,13 @@
     text-decoration: none;
     color: black; 
   }
+  
+  .acounttable {
+   
+  }
+  
+  table.acounttable td:nth-child(2){
+  min-width: 360px;
+  max-width: 500px;
+  text-align: center;
+}
