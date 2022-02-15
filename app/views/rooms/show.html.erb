@@ -1,23 +1,10 @@
 <h2>部屋</h2>
  
- <table>
-  <tbody>
-   <tr>
-    <th>タイトル</th>
-    <td><%= @room.title %></td>
-   </tr>
-   <tr>
-    <th>画像</th>
-    <td><%= attachment_image_tag @room, :roomimage, fallback: "no_image_logo.png", size: '80x80' %></td>
-   </tr>
-   <tr>
-    <th>投稿日時</th>
-    <td></td>
-   </tr>
-   <tr>
-    <th>スケジュールメモ</th>
-    <td></td>
-   </tr>
-  </tbody>
- </table>
+<%= attachment_image_tag @room, :roomimage, fallback: "no_image_logo.png", size: '480x320' %>
+
+<%= image_tag 'no_img.png', size: '80x80', class: "aicon" %>
+<%= @room.roomname %>
+<%= @room.roomprofile %>
+<%= @room.address %>
  
+ <%= render "reservations/new" %>

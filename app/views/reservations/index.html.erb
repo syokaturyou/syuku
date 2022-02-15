@@ -1,0 +1,23 @@
+<h3>予約済みルーム一覧</h3>
+
+ <table>
+  <tr>
+   <th>ルーム画像</th>
+   <th>ルーム名</th>
+   <th>使用料金</th>
+   <th>ルーム紹介</th>
+   <th>合計料金</th>
+   <th>開始日</th>
+   <th>終了日</th>
+   <th>予約確定日時</th>
+   <th></th>
+  </tr>
+  <% @reservations.each do |reservation| %>
+  <tr>
+   <td><%= reservation.id %></td>
+   <td><%= reservation.startdate %></td>
+   <td><%= reservation.enddate %></td>
+   <td><%= reservation.created_at %></td>
+  </td>
+   <% end %>
+ </table>

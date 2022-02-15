@@ -90,3 +90,13 @@ ja:
             roomimage_id: ルーム画像
             price: 料金
             address: 住所
+            
+ja:
+      activerecord:
+        models:
+          reservation: 予約
+        attributes:
+          reservation:
+            startdate: 開始日
+            enddate: 終了日
+            human: 使用人数

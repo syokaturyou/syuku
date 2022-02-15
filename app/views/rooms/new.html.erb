@@ -15,6 +15,7 @@
       <th><%= f.label :price ,"料金" %></th>
       <td><%= f.number_field :price, :placeholder => "一日辺りの料金を入力" %></td>
     </tr>
+    <%= f.hidden_field :user_id, :value => params[:user_id] %>
     <tr>
       <th><%= f.label :address, "住所" %></th>
       <td><%= f.text_field :address, :placeholder => "住所を入力" %>

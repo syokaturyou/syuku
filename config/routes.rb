@@ -14,7 +14,10 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
   
-resources :rooms, only: [:new, :index, :show, :create]
+resources :rooms, only: [:new, :index, :show, :create, :destroy]
 get 'rooms/posts' => 'users#posts', as: 'posts'
+
+resources :reservations, only: [:new, :index, :show, :create, :destroy]
+# get 'rooms/posts' => 'users#posts', as: 'posts'
 
 end
