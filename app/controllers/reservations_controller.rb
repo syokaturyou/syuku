@@ -11,8 +11,7 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
-    @reservation.room = Room.find(params[:id])
-    
+    # @reservation.room = Room.find(params[:id])
     if @reservation.save
       flash[:notice] = "予約新規登録しました"
       redirect_to reservations_path

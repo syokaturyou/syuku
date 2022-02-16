@@ -1,11 +1,9 @@
  <h2>予約</h2>
  
  <table class="acounttable">
+ 
    <tbody>
-    <tr>
-     <td>￥<%= @room.price %> /日</td>
-    </tr>
-    <%= form_with(model: @reservation, local: true) do |f| %>
+    <%= form_with model: @reservation, local: true do |f| %> 
     <tr>
       <th><%= f.label :startdate ,"開始日" %></th>
       <td><%= f.date_field :startdate, class: 'date' %></td>
@@ -14,6 +12,9 @@
       <th><%= f.label :enddate ,"終了日" %></th>
       <td><%= f.date_field :enddate, class: 'date' %></td>
     </tr>
+    
+    <%= f.hidden_field :user_id, :value => params[:user_id] %>
+    <%= f.hidden_field :room_id, :value => params[:room_id] %>
 　　<tr>
      <td>使用人数</td>
      <th><%= f.label :使用人数 %></th>

@@ -1,0 +1,44 @@
+ <h3>ルーム編集</h3>
+ <%= render "shared/error", obj: @room %>
+<table>
+ <tbody>
+  <%= attachment_image_tag @room, :roomimage, fallback: "no_image_logo.png", size: '80x80', class: "aicon" %>
+  <%= form_with model:@room, url: room_path(@room), local: true do |f| %>
+  <tr>
+      <th><%= f.label :ルーム画像 %></th>
+      <td><%= f.attachment_field :roomimage %></td>
+    </tr>
+  <tr>
+   <td><%= f.label :roomname ,"ルーム名" %></td>
+  </tr>
+  <tr>
+   <td><%= f.text_field :roomname, size: "40", :placeholder => "ルーム名を入力" %></td>
+  </tr>
+  <tr>
+   <td><%= f.label :roomprofile ,"ルーム紹介" %></td>
+  </tr>
+  <tr>
+   <td><%= f.text_area :roomprofile, size: '40x5', :placeholder => "ルーム説明を入力" %></td>
+  </tr> 
+  <tr>
+   <td><%= f.label :price ,"料金" %></td>
+  </tr>
+  <tr>
+   <td><%= f.number_field :price, :placeholder => "一日辺りの料金を入力" %></td>
+  </tr>
+  <tr>
+   <td><%= f.label :address, "住所" %></td>
+  </tr>
+  <tr>
+   <td><%= f.text_field :address, :placeholder => "住所を入力" %></td>
+  </tr>
+  <%= f.hidden_field :user_id, :value => params[:user_id] %>
+  <tr>
+   <td><%= f.submit "更新", class: 'btn btn-primary' %></td>
+  <% end %>
+  </tr>
+  <tr>
+   <td><%= link_to '戻る', rooms_path, class: "btn btn-outline-primary" %></td>
+  </tr>
+ </tbody>
+</table>

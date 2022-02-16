@@ -6,5 +6,6 @@
 <%= @room.roomname %>
 <%= @room.roomprofile %>
 <%= @room.address %>
+￥<%= @room.price %> /日
  
- <%= render "reservations/new" %>
+ <%= render "reservations/new", obj: @reservation %>

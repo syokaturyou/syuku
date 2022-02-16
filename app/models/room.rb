@@ -8,7 +8,8 @@ class Room < ApplicationRecord
   validates :roomname, presence: true
   validates :roomprofile, presence: true
   validates :address, presence: true
-  validates :price, presence: true
+  validates :price, presence: true, numericality: { less_than_or_equal_to: 1000000, 
+                                  greater_than_or_equal_to: 100 }
   validates :roomimage, presence: true
   
 end

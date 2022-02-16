@@ -7,6 +7,10 @@ class RoomsController < ApplicationController
     @room = Room.new
   end
   
+  def edit
+    @room = Room.find(params[:id])
+  end
+  
   def create
     @room = Room.new(room_params)
     @room.user = current_user
@@ -17,6 +21,19 @@ class RoomsController < ApplicationController
       render "new"
     end
   end
+  
+  def update
+    @room = Room.find(params[:id])
+    @room.update(room_params)
+    @room.user = current_user
+    if @room.save
+      flash[:notice] = "部屋情報を更新しました"
+      redirect_to rooms_path
+    else
+      render "edit"
+    end
+  end
+  
   
   def show
     @room = Room.find(params[:id])

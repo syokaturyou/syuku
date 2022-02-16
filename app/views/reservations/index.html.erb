@@ -15,9 +15,9 @@
   <% @reservations.each do |reservation| %>
   <tr>
    <td><%= reservation.id %></td>
-   <td><%= reservation.startdate %></td>
-   <td><%= reservation.enddate %></td>
-   <td><%= reservation.created_at %></td>
+   <td><%= reservation.startdate.strftime("%Y年 %m月 %d日")  %></td>
+   <td><%= reservation.enddate.strftime("%Y年 %m月 %d日")  %></td>
+   <td><%= reservation.created_at.to_s(:datetime_jp) %></td>
   </td>
    <% end %>
  </table>
