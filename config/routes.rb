@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   
   root to: 'homes#top'
   
-  
  resources :users, only: [:index, :edit, :update]
  get 'users/account' => 'users#account', as: 'account'
  get 'users/profile' => 'users#profile', as: 'profile'

@@ -1,6 +1,6 @@
 <header>
 
-<%= link_to image_tag("logo.png"), root_path %>
+<%= link_to image_tag("logo.png"), root_path, data: {"turbolinks"=>false} %>
 
 <input type="text" name="area" id="area" value="" class="nyu" placeholder="エリア">
 <input type="text" name="keyword" id="keyword" value="" class="nyu" placeholder="キーワード">
@@ -9,10 +9,10 @@
  <%= current_user.name %>
   <a data-toggle="dropdown" ><%= attachment_image_tag current_user, :profileimage, fallback: "no_image_logo.png", size: '80x80', class: "aicon" %></a>
   <ul class="dropdown-menu">
-   <li><%= link_to 'ルーム登録', new_room_path, class: 'link' %></li>
-   <li><%= link_to '予約済みルーム一覧', reservations_path, class: 'link' %></li> 
-   <li><%= link_to '登録済みルーム一覧', rooms_path, class: 'link' %></li>
-   <li><%= link_to '設定', account_path(current_user), class: 'link' %></li>
+   <li><%= link_to 'ルーム登録', new_room_path, class: 'link', data: {"turbolinks"=>false} %></li>
+   <li><%= link_to '予約済みルーム一覧', reservations_path, class: 'link', data: {"turbolinks"=>false} %></li> 
+   <li><%= link_to '登録済みルーム一覧', rooms_path, class: 'link', data: {"turbolinks"=>false} %></li>
+   <li><%= link_to '設定', account_path(current_user), class: 'link', data: {"turbolinks"=>false} %></li>
    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'link' %></li>
   </ul>
 

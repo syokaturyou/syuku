@@ -13,7 +13,6 @@
   <tr>
    <td><%= attachment_image_tag room, :roomimage, fallback: "no_image_logo.png", size: '180x120' %></td>
    <td><%= link_to room.roomname, room_path(room), data: {"turbolinks"=>false} %></td> 
-   <td>￥<%= room.price %></td>
    <td><%= room.roomprofile %></td>
    <td><%= room.created_at.to_s(:datetime_jp) %></td>
    <td><%= link_to '更新する', edit_room_path(room), class: 'btn btn-success', data: {"turbolinks"=>false} %></td>
