@@ -19,7 +19,7 @@
     </tr>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.hidden_field :room_id, :value => @reservation.room_id %>
-    <%= f.hidden_field :totalprice, :value => @reservation.totalprice %>
+    <%= f.hidden_field :totalprice, :value => @reservation.price %>
     <tr>
      <td>□使用日数:<%= (@reservation.enddate - @reservation.startdate).to_int %>日</td>
     </tr>
