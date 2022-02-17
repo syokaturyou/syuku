@@ -1,0 +1,26 @@
+<h2>予約内容画面</h2>
+
+
+予約した部屋
+ <table>
+  <tr>
+   <th>開始日</th>
+   <td><%= @reservation.startdate.strftime("%Y年 %m月 %d日") %></td>
+  </tr>
+  <tr>
+   <th>終了日</th>
+   <td><%= @reservation.enddate.strftime("%Y年 %m月 %d日") %></td>
+  </tr>
+  <tr>
+   <th>人数</th>
+   <td><%= @reservation.human %></td>
+  </tr>
+  <tr>
+   <th>価格</th>
+   <td><%= @reservation.totalprice %>円</td>
+  </tr>
+  <tr>
+   <th>使用日数</th>
+   <td><%= @reservation.usedate %></td>
+  </tr>
+ </table>

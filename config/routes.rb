@@ -17,6 +17,6 @@ resources :rooms, only: [:new, :index, :show, :create, :destroy, :update, :edit]
 get 'rooms/posts' => 'users#posts', as: 'posts'
 
 resources :reservations, only: [:new, :index, :show, :create, :destroy]
-# get 'rooms/posts' => 'users#posts', as: 'posts'
+post 'reservations/confirm' => 'reservations#confirm', as: 'confirm'
 
 end

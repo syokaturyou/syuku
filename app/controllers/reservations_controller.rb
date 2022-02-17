@@ -8,16 +8,29 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new
   end
   
-  def create
+  def confirm
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
-    # @reservation.room_id = Room.find(params[:id])
+  end
+  
+  def create
+    @reservation = Reservation.new(reservation_params)
+    @reservation.user_id = current_user.id
+    # @room = Room.find(params[:id])
+    # @reservation.room_id = @room.id
+    @reservation.usedate = @reservation.enddate - @reservation.startdate
+    @reservation.totalprice = @reservation.usedate * @reservation.human
     if @reservation.save
       flash[:notice] = "予約新規登録しました"
-      redirect_to reservations_path
+      redirect_to reservation_path(@reservation)
     else
       redirect_to root_path
     end
+  end
+  
+  def show
+    @reservation = Reservation.find(params[:id])
+    # @reservation.user = current_user
   end
   
   def destroy
