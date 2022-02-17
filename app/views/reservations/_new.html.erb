@@ -13,9 +13,10 @@
     <tr>
      <td><%= f.date_field :enddate, class: 'date' %></td>
     </tr>
-    <%= f.hidden_field :user_id, :value => params[:user_id] %>
-    <%= f.hidden_field :room_id, :value => params[:room_id] %>
-　　<tr>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :room_id, :value => @room.id %>
+    <%= f.hidden_field :totalprice, :value => @room.price %>
+    <tr>
      <td><%= f.label :使用人数 %></td>
     </tr>
     <tr>

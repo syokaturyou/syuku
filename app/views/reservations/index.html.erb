@@ -4,6 +4,7 @@
   <tr>
    <th>id</th>
    <th>ユーザーid</th>
+   <th>ルームid</th>
    <th>ルーム画像</th>
    <th>ルーム紹介</th>
    <th>合計料金</th>
@@ -16,9 +17,10 @@
   <tr>
    <td><%= reservation.id %></td>
    <td><%= reservation.user_id %></td>
+   <td><%= reservation.room_id %></td>
    <td></td>
    <td></td>
-   <td></td>
+   <td><%= reservation.totalprice %></td>
    <td><%= reservation.startdate.strftime("%Y年 %m月 %d日")  %></td>
    <td><%= reservation.enddate.strftime("%Y年 %m月 %d日")  %></td>
    <td><%= reservation.created_at.to_s(:datetime_jp) %></td>
