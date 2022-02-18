@@ -19,9 +19,59 @@
 
  header {
    min-width: 1000px;
-   min-height: 90px;
+   min-height: 70px;
    background-color: black;
-   color: white;
+   
+   // .hed {
+   //  display: flex;
+   //  margin: auto;
+    
+      .hed {
+      // float: left;
+      display: flex;
+      margin: auto;
+    
+     .keywordaicon {
+      position: relative;
+     }
+     .keywordaicon::before {
+       content: "";           /* 疑似要素に必須 */
+       width: 16px;           /* アイコンの横幅 */
+       height: 16px;          /* アイコンの高さ */
+       background: url(./searchaicon.png) no-repeat center center / auto 100%; /* 背景にアイコン画像を配置 */
+       display: inline-block; /* 高さを持たせるためにインラインブロック要素にする */
+       position: absolute;    /* 相対位置に指定 */
+       top: 4px;              /* アイコンの位置。微調整してね */
+       left: 5px;             /* アイコンの位置。微調整してね */
+     }
+      .keywordaicon input {
+        padding: 3px 0 3px 2em; /* アイコンを設置するため左の余白を多めに指定*/
+      }
+     
+      .areaaicon {
+      // margin-right: auto;
+      position: relative;
+     }
+     .areaaicon::before {
+       content: "";           /* 疑似要素に必須 */
+       width: 16px;           /* アイコンの横幅 */
+       height: 16px;          /* アイコンの高さ */
+       background: url(./areaaicon.png) no-repeat center center / auto 100%; /* 背景にアイコン画像を配置 */
+       display: inline-block; /* 高さを持たせるためにインラインブロック要素にする */
+       position: absolute;    /* 相対位置に指定 */
+       top: 4px;              /* アイコンの位置。微調整してね */
+       left: 5px;             /* アイコンの位置。微調整してね */
+     }
+      .areaaicon input {
+        padding: 3px 0 3px 2em; /* アイコンを設置するため左の余白を多めに指定*/
+      }
+    
+    .user {
+     color: white;
+     margin-left: auto;
+    }
+    
+   }
  }
  
   footer {
@@ -64,6 +114,9 @@
 }
 .nyu2 {
  width: 300px;
+}
+.nyu3 {
+ color: black;
 }
 
 .top{
@@ -117,7 +170,12 @@
     width: 200px;
     height: 300px;
 }
- 
+  .sub {
+   vertical-align: middle;
+   border-style: none;
+   width: 200px;
+   height: 300px;
+  }
 }
 
 .container {
@@ -182,3 +240,6 @@
   max-width: 500px;
   text-align: center;
 }
+
+
+  
