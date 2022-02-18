@@ -2,23 +2,22 @@
 
  <table>
   <tr>
-   <th>id</th>
+   <th>ルーム画像</th>
    <th>ルーム名</th>
    <th>使用料金</th>
    <th>ルーム紹介</th>
-   <th>画像</th>
    <th>作成日</th>
    <th></th>
   </tr>
+  <%= paginate @rooms %>
   <% @rooms.each do |room| %>
   <tr>
-   <td><%= room.id %></td>  
-   <td><%= room.roomname %></td> 
-   <td><%= room.price %></td>
+   <td><%= attachment_image_tag room, :roomimage, fallback: "no_image_logo.png", size: '240x180' %></td>
+   <td><%= link_to room.roomname, room_path(room), data: {"turbolinks"=>false} %></td> 
    <td><%= room.roomprofile %></td>
-   <td><%= attachment_image_tag room, :roomimage, fallback: "no_image_logo.png", size: '80x80' %></td>
-   <td><%= room.created_at %></td>
-   <td><%= link_to '削除する', user_path(user), method: :delete, class: 'btn btn-danger', data: { confirm: "本当に削除しますか？" }%></td>
+   <td><%= room.created_at.to_s(:datetime_jp) %></td>
+   <td><%= link_to '更新する', edit_room_path(room), class: 'btn btn-success', data: {"turbolinks"=>false} %></td>
+   <td><%= link_to '削除する', room_path(room), method: :delete, class: 'btn btn-danger', data: { confirm: "本当に削除しますか？" } %></td>
    </tr>
    <% end %>
  </table>

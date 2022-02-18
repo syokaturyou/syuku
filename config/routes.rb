@@ -13,8 +13,8 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
   
+get 'rooms/posts' => 'rooms#posts', as: 'posts'
 resources :rooms, only: [:new, :index, :show, :create, :destroy, :update, :edit]
-get 'rooms/posts' => 'users#posts', as: 'posts'
 
 resources :reservations, only: [:new, :index, :show, :create, :destroy]
 post 'reservations/confirm' => 'reservations#confirm', as: 'confirm'

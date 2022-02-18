@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   def index
-    @rooms = Room.all
+    @rooms = Room.all.order(updated_at: 'ASC').page(params[:page]).per(4)
   end
   
   def new
@@ -16,7 +16,7 @@ class RoomsController < ApplicationController
     @room.user = current_user
     if @room.save
       flash[:notice] = "部屋を新規登録しました"
-      redirect_to rooms_path
+      redirect_to room_path(@room)
     else
       render "new"
     end
@@ -34,14 +34,14 @@ class RoomsController < ApplicationController
     end
   end
   
+  def posts
+    @rooms = current_user.rooms.order(updated_at: 'ASC').page(params[:page]).per(4)
+  end
+  
   
   def show
     @room = Room.find(params[:id])
     @reservation = Reservation.new
-  end
-  
-  def posts
-    @rooms = Room.all
   end
   
   def destroy

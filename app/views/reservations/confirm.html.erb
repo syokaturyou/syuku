@@ -19,7 +19,7 @@
     </tr>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.hidden_field :room_id, :value => @reservation.room_id %>
-    <%= f.hidden_field :totalprice, :value => @reservation.price %>
+    <%= f.hidden_field :totalprice, :value => @reservation.price * @reservation.human * (@reservation.enddate - @reservation.startdate).to_int %>
     <tr>
      <td>□使用日数:<%= (@reservation.enddate - @reservation.startdate).to_int %>日</td>
     </tr>
@@ -31,7 +31,7 @@
     </tr>
     <tr>
      <td>
-      <%= (@reservation.enddate - @reservation.startdate).to_int * @reservation.human %></td>
+      <%= (@reservation.enddate - @reservation.startdate).to_int * @reservation.human * @reservation.price %></td>
     </tr>
     <tr>
      <td>上記内容でよろしければ「予約を確定」を押してください</td>
@@ -40,7 +40,7 @@
      <td><%= f.submit "予約を確定", class: 'btn btn-primary' %></td>
     </tr>
     <tr>
-     <td><%= link_to 'ルーム詳細に戻る', rooms_path, class: "btn btn-outline-primary" %></td>
+     <td><%= link_to 'ルーム詳細に戻る', room_path(@reservation.room_id), class: "btn btn-outline-primary" %></td>
     </tr>
     <% end %>
    </tbody>

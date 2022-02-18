@@ -1,8 +1,16 @@
+<div class="container">
+<div class="row">
+  <div class="col-3">
+      <%= render "shared/room" %>
+  </div>
+
+<div class="cccc">
+ <div class="aaaa">
 <h3>ルーム情報登録</h3>
  <%= render "shared/error", obj: @room %>
  
  <%= form_with(model: @room, local: true) do |f| %>
-  <table>
+  <table class="acounttable">
     <tr>
       <th><%= f.label :roomname ,"ルーム名" %></th>
       <td><%= f.text_field :roomname, size: "40", :placeholder => "ルーム名を入力" %></td>
@@ -28,3 +36,9 @@
 
       <p><%= f.submit "登録", class: 'btn btn-primary' %></p>
   <% end %>
+
+</div>
+</div>
+ 
+</div>
+</div>

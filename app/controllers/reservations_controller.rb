@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
   
   def index
-   @reservations = Reservation.all
+   @reservations = Reservation.all.order(updated_at: 'ASC').page(params[:page]).per(4)
   end
   
   def new
@@ -10,13 +10,12 @@ class ReservationsController < ApplicationController
   
   def confirm
     @reservation = Reservation.new(reservation_params)
-    binding.pry
   end
   
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.usedate = @reservation.enddate - @reservation.startdate
-    binding.pry
+    # binding.pry
     if @reservation.save
       flash[:notice] = "予約新規登録しました"
       redirect_to reservation_path(@reservation)
@@ -27,7 +26,6 @@ class ReservationsController < ApplicationController
   
   def show
     @reservation = Reservation.find(params[:id])
-    # @reservation.user = current_user
   end
   
   def destroy
@@ -38,7 +36,7 @@ class ReservationsController < ApplicationController
   end
   
   def reservation_params
-    params.require(:reservation).permit(:human, :startdate, :enddate, :room_id, :user_id)
+    params.require(:reservation).permit(:human, :startdate, :enddate, :room_id, :user_id, :price, :totalprice)
   end
   
 end

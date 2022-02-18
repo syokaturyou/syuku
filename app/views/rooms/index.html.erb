@@ -4,19 +4,24 @@
   <tr>
    <th>ルーム画像</th>
    <th>ルーム名</th>
+   <th>作成者id</th>
    <th>使用料金</th>
    <th>ルーム紹介</th>
    <th>作成日</th>
    <th></th>
   </tr>
+  <%= paginate @rooms %>
   <% @rooms.each do |room| %>
   <tr>
    <td><%= attachment_image_tag room, :roomimage, fallback: "no_image_logo.png", size: '180x120' %></td>
    <td><%= link_to room.roomname, room_path(room), data: {"turbolinks"=>false} %></td> 
+   <th><%= room.user_id %></th>
    <td><%= room.roomprofile %></td>
    <td><%= room.created_at.to_s(:datetime_jp) %></td>
+   <% if current_user.id == room.user_id %>
    <td><%= link_to '更新する', edit_room_path(room), class: 'btn btn-success', data: {"turbolinks"=>false} %></td>
    <td><%= link_to '削除する', room_path(room), method: :delete, class: 'btn btn-danger', data: { confirm: "本当に削除しますか？" } %></td>
+   <% end %>
    </tr>
    <% end %>
  </table>
