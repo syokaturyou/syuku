@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   }
   
 get 'rooms/posts' => 'rooms#posts', as: 'posts'
+get 'rooms/search' => 'rooms#search'
 resources :rooms, only: [:new, :index, :show, :create, :destroy, :update, :edit]
 
 resources :reservations, only: [:new, :index, :show, :create, :destroy]

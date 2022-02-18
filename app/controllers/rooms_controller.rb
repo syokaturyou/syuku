@@ -3,6 +3,14 @@ class RoomsController < ApplicationController
     @rooms = Room.all.order(updated_at: 'ASC').page(params[:page]).per(4)
   end
   
+  def search
+  @rooms = Room.search(params[:keyword]).page(params[:page]).per(4)
+  @keyword = params[:keyword]
+  @rooms = Room.search(params[:area]).page(params[:page]).per(4)
+  @keyword = params[:area]
+  render "index"
+  end
+  
   def new
     @room = Room.new
   end
