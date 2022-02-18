@@ -2,9 +2,9 @@
 
  <table>
   <tr>
+   <th>作成者id</th>
    <th>ルーム画像</th>
    <th>ルーム名</th>
-   <th>作成者id</th>
    <th>使用料金</th>
    <th>ルーム紹介</th>
    <th>作成日</th>
@@ -13,9 +13,10 @@
   <%= paginate @rooms %>
   <% @rooms.each do |room| %>
   <tr>
+   <td><%= room.user_id %></td>
    <td><%= attachment_image_tag room, :roomimage, fallback: "no_image_logo.png", size: '180x120' %></td>
    <td><%= link_to room.roomname, room_path(room), data: {"turbolinks"=>false} %></td> 
-   <th><%= room.user_id %></th>
+   <td><%= room.price %></td>
    <td><%= room.roomprofile %></td>
    <td><%= room.created_at.to_s(:datetime_jp) %></td>
    <% if current_user.id == room.user_id %>
