@@ -1,12 +1,12 @@
 class RoomsController < ApplicationController
   def index
-    @rooms = Room.all.order(updated_at: 'ASC').page(params[:page]).per(4)
+    @rooms = Room.all.order(updated_at: 'ASC').page(params[:page]).per(8)
   end
   
   def search
-  @rooms = Room.search(params[:keyword]).page(params[:page]).per(4)
+  @rooms = Room.search(params[:keyword]).page(params[:page]).per(8)
   @keyword = params[:keyword]
-  @rooms = Room.search(params[:area]).page(params[:page]).per(4)
+  @rooms = Room.search(params[:area]).page(params[:page]).per(8)
   @keyword = params[:area]
   render "index"
   end
