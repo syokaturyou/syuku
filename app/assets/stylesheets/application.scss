@@ -244,21 +244,18 @@
 
 .roomarea {
  margin: 0 10px;
- width: 300px;
+ width: 280px;
  height: 280px;
  background-color: #e2e2e2;
  font-size: 2rem;
- 
  .roomname {
   color: gray;
   margin: 5px 10px;
  }
- 
  .address {
   color: black;
   margin: 5px 10px;
  }
- 
  .price {
   color: black;
   text-align: right;
@@ -266,7 +263,10 @@
   font-size: 1.5rem;
  }
  
+}
 
+.count {
+ font-size: 24px;
 }
 
   

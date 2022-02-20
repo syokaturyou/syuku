@@ -13,7 +13,7 @@ class Room < ApplicationRecord
   validates :roomimage, presence: true
   
   def self.search(keyword)
-   where(["roomname like? OR address like?", "%#{keyword}%", "%#{keyword}%"])
+   where(["roomname like? OR address like? OR roomprofile like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"])
   end
   
   def self.search(area)
