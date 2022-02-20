@@ -14,7 +14,7 @@
   <%= paginate @reservations %>
   <% @reservations.each do |reservation| %>
   <tr>
-   <td><%= attachment_image_tag reservation.room, :roomimage, fallback: "no_image_logo.png", size: '240x180' %></td>
+   <td><%= link_to attachment_image_tag( reservation.room, :roomimage, fallback: "no_image_logo.png", size: '240x180'), room_path(reservation.room_id), data: {"turbolinks"=>false} %></td>
    <td><%= link_to reservation.room.roomname, room_path(reservation.room_id), data: {"turbolinks"=>false} %></td>
    <td><%= reservation.room.roomprofile %></td>
    <td><%= reservation.totalprice %></td>
