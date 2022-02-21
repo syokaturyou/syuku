@@ -1,29 +1,27 @@
   <table class="acounttable">
+   <%= render "shared/error", obj: @reservation %>
    <tbody>
     <%= form_with model: @reservation, url: confirm_path, method: :post, local: true do |f| %>
     <tr>
-     <td><%= f.label :startdate ,"開始日" %></td>
+     <td><%= f.label :startdate ,"開始日" %>
+         <%= f.date_field :startdate, autofocus: true, class: 'form-control' %>
+      </td>
     </tr>
     <tr>
-     <td><%= f.date_field :startdate, class: 'date' %></td>
-    </tr>
-    <tr>
-     <td><%= f.label :enddate ,"終了日" %></td>
-    </tr>
-    <tr>
-     <td><%= f.date_field :enddate, class: 'date' %></td>
+     <td><%= f.label :enddate ,"終了日" %>
+         <%= f.date_field :enddate, autofocus: true, class: 'form-control' %>
+     </td>
     </tr>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.hidden_field :room_id, :value => @room.id %>
     <%= f.hidden_field :price, :value => @room.price %>
     <tr>
-     <td><%= f.label :使用人数 %></td>
+     <td><%= f.label :使用人数 %>
+         <%= f.number_field :human, autofocus: true, class: 'form-control' %>
+     </td>
     </tr>
     <tr>
-     <td><%= f.number_field :human, autofocus: true %></td>
-    </tr>
-    <tr>
-     <td><%= f.submit "確認画面へ進む", class: 'btn btn-primary' %></td>
+     <td><%= f.submit "確認画面へ進む", class: 'btn btn-primary', data: {"turbolinks"=>false} %></td>
     </tr>
     <% end %>
    </tbody>

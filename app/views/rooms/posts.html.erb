@@ -1,6 +1,6 @@
-<h3>部屋一覧</h3>
+<h3>登録済みルーム一覧</h3>
 
- <table>
+ <table class="posttable">
   <tr>
    <th>ルーム画像</th>
    <th>ルーム名</th>
@@ -12,7 +12,7 @@
   <%= paginate @rooms %>
   <% @rooms.each do |room| %>
   <tr>
-   <td><%= link_to attachment_image_tag( room, :roomimage, fallback: "no_image_logo.png", size: '240x180'), room_path(room), data: {"turbolinks"=>false} %></td>
+   <td><%= link_to attachment_image_tag( room, :roomimage, fallback: "no_image_logo.png", size: '240x140'), room_path(room), data: {"turbolinks"=>false} %></td>
    <td><%= link_to room.roomname, room_path(room), data: {"turbolinks"=>false} %></td> 
    <td><%= room.roomprofile %></td>
    <td>￥<%= room.price %></td>

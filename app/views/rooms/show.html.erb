@@ -2,10 +2,10 @@
 
 <div class="container">
  <div class="row">
-  <div class="col-7">
+  <div class="col-8">
  
-<%= attachment_image_tag @room, :roomimage, fallback: "no_image_logo.png", size: '640x320' %>
-
+<%= attachment_image_tag @room, :roomimage, fallback: "no_image_logo.png", size: '620x420' %>
+</br>
 <%= image_tag 'no_img.png', size: '80x80', class: "aicon" %>
 <%= @room.id %>
 <%= @room.user_id %>
@@ -13,10 +13,11 @@
 <%= @room.roomprofile %>
 <%= @room.address %>
  </div>
- <div>
-  ￥<%= @room.price %> /日
-  <%= render "reservations/new" %>
+ <div class="col-4">
+  <h3>￥<%= @room.price %> /日</h3>
   <%= render "shared/error", obj: @reservation %>
+  <%= render "reservations/new" %>
+
  </div>
  
  </div>

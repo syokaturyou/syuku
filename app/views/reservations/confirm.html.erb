@@ -1,21 +1,27 @@
- <h2>予約確認</h2>
+<div class="container">
+ <div class="row">
+  <div class="col-3">
+ </div>
  
+ <div class="col-6">
  <table class="acounttable">
    <tbody>
-     一日辺り金額
-     
+    <tr>
+     <td><h3>予約内容確認</h3></td>
+    </tr>
+    <tr>
+     <td><h3>￥<%= @reservation.price %>/日</h3></td>
+    </tr>
     <%= form_with(model: @reservation, local: true) do |f| %>
     <tr>
-     <td>開始日<%= f.hidden_field :startdate, :value => @reservation.startdate %></td>
+     <td>開始日<%= f.hidden_field :startdate, :value => @reservation.startdate %>
+     <%= f.date_field :startdate, autofocus: false, class: 'form-control' %>
+     </td>
     </tr>
     <tr>
-     <td><%= @reservation.startdate %></td>
-    </tr>
-    <tr>
-     <td>終了日<%= f.hidden_field :enddate, :value => @reservation.enddate %></td>
-    </tr>
-    <tr>
-     <td><%= @reservation.enddate %></td>
+     <td>終了日<%= f.hidden_field :enddate, :value => @reservation.enddate %>
+        <%= @reservation.enddate %>
+     </td>
     </tr>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.hidden_field :room_id, :value => @reservation.room_id %>
@@ -24,24 +30,24 @@
      <td>□使用日数:<%= (@reservation.enddate - @reservation.startdate).to_int %>日</td>
     </tr>
     <tr>
-    <td><%= f.hidden_field :human, :value => @reservation.human %>□人数:<%= @reservation.human %>人</td>
+     <td><%= f.hidden_field :human, :value => @reservation.human %>□人数:<%= @reservation.human %>人</td>
     </tr>
     <tr>
-     <td>合計金額</td>
-    </tr>
-    <tr>
-     <td>
-      <%= (@reservation.enddate - @reservation.startdate).to_int * @reservation.human * @reservation.price %></td>
+     <td>合計金額<%= (@reservation.enddate - @reservation.startdate).to_int * @reservation.human * @reservation.price %></td>
     </tr>
     <tr>
      <td>上記内容でよろしければ「予約を確定」を押してください</td>
     </tr>
     <tr>
-     <td><%= f.submit "予約を確定", class: 'btn btn-primary' %></td>
+     <td><%= f.submit "予約を確定", class: 'btn btn-primary', data: {"turbolinks"=>false} %></td>
     </tr>
     <tr>
-     <td><%= link_to 'ルーム詳細に戻る', room_path(@reservation.room_id), class: "btn btn-outline-primary" %></td>
+     <td><%= link_to 'ルーム詳細に戻る', room_path(@reservation.room_id), class: "btn btn-secondary", data: {"turbolinks"=>false} %></td>
     </tr>
     <% end %>
    </tbody>
   </table>
+  </div>
+  
+  </div>
+</div>
