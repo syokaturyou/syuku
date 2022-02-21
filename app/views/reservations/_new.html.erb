@@ -9,7 +9,7 @@
     </tr>
     <tr>
      <td><%= f.label :enddate ,"終了日" %>
-         <%= f.date_field :enddate, autofocus: true, class: 'form-control' %>
+         <%= f.date_field :enddate, class: 'form-control' %>
      </td>
     </tr>
     <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -17,7 +17,7 @@
     <%= f.hidden_field :price, :value => @room.price %>
     <tr>
      <td><%= f.label :使用人数 %>
-         <%= f.number_field :human, autofocus: true, class: 'form-control' %>
+         <%= f.number_field :human, class: 'form-control' %>
      </td>
     </tr>
     <tr>

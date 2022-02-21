@@ -15,7 +15,7 @@
     <%= form_with(model: @reservation, local: true) do |f| %>
     <tr>
      <td>開始日<%= f.hidden_field :startdate, :value => @reservation.startdate %>
-     <%= f.date_field :startdate, autofocus: false, class: 'form-control' %>
+     <%= f.date_field :startdate, class: 'form-control' %>
      </td>
     </tr>
     <tr>
