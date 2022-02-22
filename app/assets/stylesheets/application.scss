@@ -78,6 +78,7 @@
    background-color: black;
    color: white;
    text-align: center;
+   bottom: 10%;
  }
 
  .main {
@@ -387,3 +388,19 @@
     min-width: 380px;
     padding: 3px;
   }
+
+
+.field {
+   // width: 100%;
+   // height: 800px;
+   // text-align: center;
+ .aa{
+    content: "必須a";
+    background-color: #ff0000a8;
+    border-radius: 5px;
+    margin: 0 5px;
+    padding: 4px;
+    color: #fff;
+    width: 40px;
+   }
+}

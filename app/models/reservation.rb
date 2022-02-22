@@ -11,11 +11,11 @@ class Reservation < ApplicationRecord
 
   def start_end_check
     errors.add(:enddate, "は開始日以降の日を登録してください") unless
-    self.startdate < self.enddate 
+    startdate == nil or enddate == nil or startdate < enddate
   end
   
   def date_before_start
-    errors.add(:startdate, "は今日以降のものを選択してください") if startdate < Date.today
+    errors.add(:startdate, "は今日以降のものを選択してください") if  startdate != nil and enddate != nil and startdate < Date.today
   end
   
 end
