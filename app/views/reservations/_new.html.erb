@@ -1,5 +1,6 @@
+  <%= render "shared/error", obj: @reservation %>
+  
   <table class="acounttable">
-   <%= render "shared/error", obj: @reservation %>
    <tbody>
     <%= form_with model: @reservation, url: confirm_path, method: :post, local: true do |f| %>
     <tr>

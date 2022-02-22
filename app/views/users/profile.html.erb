@@ -1,21 +1,23 @@
-<div class="container">
 <div class="row">
-  <div class="col-3">
+  <div class="col-2">
    <%= render "users/shared/bubun" %>
   </div>
 
-<div class="cccc">
- <div class="aaaa">
+<div class="col-10">
+<div class="out">
+ <div class="in">
  <h3>プロフィール</h3>
-  <table class="acounttable">
+  <table class="profiletable">
    <tbody>
     <tr>
-     <td></td>
+     <th></th>
+     <th></th>
      <td><%= attachment_image_tag @user, :profileimage, fallback: "no_image_logo.png", size: '80x80', class: "aicon" %></td>
     </tr>
     <%= form_with model:@user, url: user_path(@user), local: true do |f| %>
      <tr>
       <th><%= f.label :アイコン画像 %></th>
+      <th><label>必須</label></th>
       <td>
         <label><%= check_box_tag :image_delete %>画像なし</label>
         <label><%= f.attachment_field :profileimage %></label>
@@ -23,13 +25,17 @@
      </tr>
     <tr>
      <th><%= f.label :名前 %></th>
-     <td><%= f.text_field :name, autofocus: true, required: true, maxlength: "40", size: "40" %></td>
+     <th>必須</th>
+     <td><%= f.text_field :name, autofocus: true, required: true, class: 'form-control', maxlength: "40", size: "40" %></td>
     </tr>
     <tr>
      <th><%= f.label :自己紹介 %></th>
-     <td><%= f.text_area :profile, autofocus: true,  size: '40x5' %></td>
+     <th>必須</th>
+     <td><%= f.text_area :profile, autofocus: true, class: 'form-control', size: '40x5' %></td>
     </tr>
     <tr>
+     <th></th>
+     <th></th>
      <td><%= f.submit "更新する", class: 'btn btn-primary' %></td>
     <% end %>
     </tr>
@@ -37,6 +43,6 @@
   </table>
  </div>
 </div>
- 
 </div>
+ 
 </div>

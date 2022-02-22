@@ -10,6 +10,27 @@ class ReservationsController < ApplicationController
   
   def confirm
     @reservation = Reservation.new(reservation_params)
+    if @reservation.valid?
+      render "confirm"
+    else
+      @room = Room.find(@reservation.room_id)
+      render 'rooms/show'
+    end
+    # if @reservation.startdate == nil || @reservation.enddate == nil || @reservation.human == nil
+    #   flash[:notice] = "必須項目を入力してください"
+    #   redirect_to room_path(@reservation.room_id)
+    # elsif @reservation.enddate <= @reservation.startdate
+    #   flash[:notice] = "終了日は開始日以降の日を登録してください"
+    #   redirect_to room_path(@reservation.room_id)
+    # elsif @reservation.startdate < Date.today
+    #   flash[:notice] = "開始日は本日以降の日を登録してください"
+    #   redirect_to room_path(@reservation.room_id)
+    # elsif @reservation.human < 1
+    #   flash[:notice] = "1人以上の人数としてください"
+    #   redirect_to room_path(@reservation.room_id)
+    # else
+    #   render "confirm"
+    # end
   end
   
   def create
