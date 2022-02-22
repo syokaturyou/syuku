@@ -1,8 +1,12 @@
 <h2>予約内容画面</h2>
 
-
-予約した部屋
- <table>
+<div class="complete">
+ <div class="in">
+ <table class="reservationtable">
+  <tr>
+   <th>予約した部屋</th>
+   <td><%= @reservation.room.roomname %></td>
+  </tr>
   <tr>
    <th>開始日</th>
    <td><%= @reservation.startdate.strftime("%Y年 %m月 %d日") %></td>
@@ -13,7 +17,7 @@
   </tr>
   <tr>
    <th>人数</th>
-   <td><%= @reservation.human %></td>
+   <td><%= @reservation.human %>人</td>
   </tr>
   <tr>
    <th>価格</th>
@@ -21,6 +25,9 @@
   </tr>
   <tr>
    <th>使用日数</th>
-   <td><%= @reservation.usedate %></td>
+   <td><%= @reservation.usedate %>日</td>
   </tr>
  </table>
+ 
+ </div>
+ </div>

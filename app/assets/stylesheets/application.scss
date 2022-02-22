@@ -18,7 +18,6 @@
  @import "bootstrap";
 
  header {
-   // min-width: 1000px;
    width: 100%;
    min-height: 70px;
    background-color: black;
@@ -74,7 +73,6 @@
  }
  
   footer {
-   // min-width: 1000px;
    width: 100%;
    min-height: 180px;
    background-color: black;
@@ -128,6 +126,7 @@
  width: 100%;
  background-image: image-url("img_cover_top.png");
  background-repeat:  no-repeat;
+ background-size: cover;
  padding: 10px;
   .form-area{
    min-height: 250px;
@@ -162,9 +161,9 @@
 .under {
  left: 30%;
  display: flex;
- top: 80%;
  min-height: 350px;
  background-color: white;
+ padding: 40px 0;
  
  .h1{
  min-width: 700px;
@@ -189,8 +188,18 @@
 .bbb {
  font-size: 18px;
  text-align: center;
- .link {
+ padding: 30px 0;
+ .account {
   color: black;
+  border-right: 3px solid blue;
+ }
+ .basic {
+  color: black;
+  border-right: 3px solid blue;
+ }
+ .profile {
+  color: black;
+  border-right: 3px solid blue;
  }
 }
 
@@ -201,7 +210,8 @@
         border-left: 2px solid #e2e2e2;
         height: 100%;
       .in {
-        margin: 0px 40px;
+        margin: 0px 80px;
+        padding: 20px;
         border: 2px solid #e2e2e2;
         background-color: white;
         position: relative;
@@ -247,82 +257,133 @@
    .btn {
     width: 100%;
     }
+   .p {
+    width: 300px;
+   }
+   .aa{
+    content: "必須a";
+    background-color: #ff0000a8;
+    border-radius: 5px;
+    margin: 0 5px;
+    padding: 4px;
+    color: #fff;
+   }
   }
   
-  table.acounttable td:nth-child(2){
-  min-width: 360px;
-  max-width: 500px;
-  text-align: center;
-}
-
-.acounttable td{
-  min-width: 340px;
-  height: 90px;
-  padding: 10px;
-}
-
-
-.roomarea {
- margin: 0 10px;
- width: 280px;
- height: 280px;
- background-color: #e2e2e2;
- font-size: 2rem;
- .roomname {
-  color: gray;
-  margin: 5px 10px;
+   table.acounttable td:nth-child(2){
+   min-width: 560px;
+   max-width: 700px;
+   text-align: center;
  }
- .address {
-  color: black;
-  margin: 5px 10px;
- }
- .price {
-  color: black;
-  text-align: right;
-  margin: 5px 10px;
-  font-size: 1.5rem;
- }
- 
-}
 
-.count {
- font-size: 24px;
-}
+  .acounttable th{
+    min-width: 40px;
+  }
+  
+  .acounttable td{
+    min-width: 340px;
+    height: 90px;
+    padding: 10px;
+  }
+  
+  .profiletable {
+   .lable {
+    background-color: red;
+   }
+   .btn {
+      width: 100%;
+    }
+   .aa{
+    content: "必須a";
+    background-color: #ff0000a8;
+    border-radius: 5px;
+    margin: 0 5px;
+    padding: 4px;
+    color: #fff;
+   }
+  }
 
-.posttable td{
-  min-width: 120px;
-  text-align: center;
-  padding: 3px;
-}
+  .profiletable td{
+    min-width: 700px;
+    padding: 3px;
+  }
+  
+  .posttable td{
+    min-width: 120px;
+    text-align: center;
+    padding: 3px;
+  }
+  
+  table.posttable td:nth-child(1){
+    min-width: 360px;
+    text-align: center;
+  }
+  
+  table.posttable td:nth-child(2){
+    font-size: 18px;
+    text-decoration: underline;
+  }
+  
+  .posttable th{
+    min-width: 120px;
+    text-align: center;
+    padding: 3px;
+  }
 
-table.posttable td:nth-child(1){
-  min-width: 360px;
-  text-align: center;
-}
 
-table.posttable td:nth-child(2){
-  font-size: 18px;
-  text-decoration: underline;
-}
+  .roomarea {
+   margin: 10px 10px;
+   width: 280px;
+   height: 280px;
+   background-color: #e2e2e2;
+   font-size: 2rem;
+   .roomname {
+    color: gray;
+    margin: 5px 10px;
+   }
+   .address {
+    color: black;
+    margin: 5px 10px;
+   }
+   .price {
+    color: black;
+    text-align: right;
+    margin: 5px 10px;
+    font-size: 1.5rem;
+   }
+   
+  }
+  
+  .count {
+   font-size: 24px;
+  }
 
-.posttable th{
-  min-width: 120px;
-  text-align: center;
-  padding: 3px;
-}
 
-.profiletable {
- .lable {
-  background-color: red;
- }
-}
+  .complete {
+   background-color: #F6F8F9;
+   width: 100%;
+   height: 100%;
+   font-size: 16px;
+   .in {
+        margin: 0px 200px;
+        padding: 20px;
+        border: 2px solid #e2e2e2;
+        background-color: white;
+        position: relative;
+        top: 5%;
+      }
+  }
+  
+   .reservationtable {
+    widht: 100%;
+  }
+  
+  .reservationtable th {
+    min-width: 200px;
+    padding: 3px;
+  }
 
-.profiletable td{
-  min-width: 120px;
-  text-align: center;
-  padding: 3px;
-}
-
-table.profiletable th:nth-child(2){
-  color: red;
-}
+   .reservationtable td {
+    min-width: 380px;
+    padding: 3px;
+  }
