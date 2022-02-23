@@ -6,7 +6,7 @@
  
 <%= attachment_image_tag @room, :roomimage, fallback: "no_image_logo.png", size: '620x420' %>
 </br>
-<%= image_tag 'no_img.png', size: '80x80', class: "aicon" %>
+<%= link_to attachment_image_tag( current_user, :profileimage, fallback: "no_img.png", size: '80x80', class: "aicon"), root_path %>
 <%= @room.id %>
 <%= @room.user_id %>
 <%= @room.roomname %>
