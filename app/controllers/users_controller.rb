@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+ 
+ before_action :move_to_signed_in
   
    def index
     @users = User.all
@@ -30,6 +32,13 @@ class UsersController < ApplicationController
    
    def user_params
     params.require(:user).permit(:name, :email, :profile, :profileimage, :encrypted_password)
+   end
+   
+   def move_to_signed_in
+    unless user_signed_in?
+      #サインインしていないユーザーはログインページが表示される
+      redirect_to  '/users/sign_in'
+    end
    end
    
 end

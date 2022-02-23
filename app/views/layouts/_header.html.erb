@@ -25,10 +25,11 @@
    <li><%= link_to '設定', account_path, class: 'link', data: {"turbolinks"=>false} %></li>
    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'link' %></li>
   </ul>
-
 <% else %>
+<div class="loginaicon">
  <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-primary' %>
  <%= link_to '登録する', new_user_registration_path, class: 'btn btn-secondary' %>
+</div>
 <% end %>
 </div>
 

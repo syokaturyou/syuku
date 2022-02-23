@@ -1,4 +1,7 @@
 class RoomsController < ApplicationController
+  
+  before_action :move_to_signed_in, except: [:show, :search]
+  
   def index
     @rooms = Room.all.order(updated_at: 'ASC').page(params[:page]).per(8)
   end
@@ -66,6 +69,13 @@ class RoomsController < ApplicationController
   
   def room_params
     params.require(:room).permit(:roomname, :roomprofile, :roomimage, :address, :price, :user_id)
+  end
+  
+  def move_to_signed_in
+    unless user_signed_in?
+      #サインインしていないユーザーはログインページが表示される
+      redirect_to  '/users/sign_in'
+    end
   end
   
 end

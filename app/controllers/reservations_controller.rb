@@ -1,5 +1,7 @@
 class ReservationsController < ApplicationController
   
+  before_action :move_to_signed_in
+  
   def index
     @reservations = Reservation.all.order(updated_at: 'ASC').page(params[:page]).per(4)
   end

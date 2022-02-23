@@ -69,12 +69,18 @@
      margin-left: auto;
     }
     
+    .loginaicon {
+      padding: 15px 0;
+      line-height: 30px;
+    }
+    
    }
  }
  
   footer {
    width: 100%;
    min-height: 180px;
+   padding: 80px 0;
    background-color: black;
    color: white;
    text-align: center;
@@ -309,10 +315,20 @@
     padding: 3px;
   }
   
+  .posttable {
+   border: 2px gray solid;
+   margin: 10px 30px;
+  }
+  
   .posttable td{
     min-width: 120px;
     text-align: center;
     padding: 3px;
+  }
+  
+   table.posttable tr:nth-child(1){
+    border: 2px gray solid;
+    text-align: center;
   }
   
   table.posttable td:nth-child(1){
