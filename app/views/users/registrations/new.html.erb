@@ -1,8 +1,9 @@
   <div class="field">
     <h3>新しいアカウントを作成</h3>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
     <%= render "users/shared/error_messages", resource: resource %>
     <table>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <tbody>
         <tr>
           <th><div class="aa">必須</div></th>
