@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TaskApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <!-- コード追加　Bootstrap CSS読み込みコード-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- コード追加　Bootstrap JavaScript読み込みコード-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+  </head>
+<body>
+   <%= render 'layouts/header' %>
+ <main class="main2"> 
+   <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+   <% end %>
+     <%= yield %> 
+   </main>
+    <footer class="footer2"> 
+     <p>© 2020 POTEPAN.INC.</p>
+    </footer> 
+  </body>
+</html>

@@ -1,0 +1,50 @@
+
+<div class="top">
+   </br>
+    <div class="form-area">
+    <table class="areatable">
+     <tbody>
+     <tr>
+      <td></td>
+      <td><p>PotepanShareで体験したことのない旅をしよう</p></td>
+     </tr>
+     <tr>
+     <td>エリア</td>
+     <td>
+      <%= form_with url: rooms_search_path, method: :get, local: true do |f| %>
+      <%= f.text_field :area, value: @area, :placeholder => "東京", class: "nyu2" %>
+     </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td><%= f.submit "探す", class: 'btn btn-primary' %></td>
+     </tr>
+     <% end %>
+     </tbody>
+     </table>
+    </div>
+</div>
+
+    <div class="under">
+    　<h1>おすすめのエリア</h1>
+      </br>
+    　<%= form_with url: rooms_search_path, method: :get, local: true do |f| %>
+      <%= f.hidden_field :area, :value => "東京" %>
+       <%= image_submit_tag("img_tokyo.png", class: 'sub') %>
+      <% end %>
+    　
+    　<%= form_with url: rooms_search_path, method: :get, local: true do |f| %>
+      <%= f.hidden_field :area, :value => "大阪" %>
+       <%= image_submit_tag("img_osaka.png", class: 'sub') %>
+      <% end %>
+    　
+    　<%= form_with url: rooms_search_path, method: :get, local: true do |f| %>
+      <%= f.hidden_field :area, :value => "京都" %>
+       <%= image_submit_tag("img_kyoto.png", class: 'sub') %>
+      <% end %>
+    　
+    　<%= form_with url: rooms_search_path, method: :get, local: true do |f| %>
+      <%= f.hidden_field :area, :value => "札幌" %>
+       <%= image_submit_tag("img_sapporo.png", class: 'sub') %>
+      <% end %>
+    </div>

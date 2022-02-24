@@ -1,0 +1,30 @@
+<h3>予約済みルーム一覧</h3>
+
+ <table class="posttable">
+  <tr>
+   <th>ルーム画像</th>
+   <th>ルーム名</th>
+   <th>ルーム紹介</th>
+   <th>合計料金</th>
+   <th>開始日</th>
+   <th>終了日</th>
+   <th>予約確定日時</th>
+   <th></th>
+  </tr>
+  <%= paginate @reservations %>
+  <% @reservations.each do |reservation| %>
+  <tr>
+   <td><%= link_to attachment_image_tag( reservation.room, :roomimage, fallback: "no_image_logo.png", size: '240x140'), room_path(reservation.room_id), data: {"turbolinks"=>false} %></td>
+   <td><%= link_to reservation.room.roomname, room_path(reservation.room_id), data: {"turbolinks"=>false} %></td>
+   <td><%= reservation.room.roomprofile %></td>
+   <td>￥<%= reservation.totalprice %></td>
+   <td><%= reservation.startdate.strftime("%Y年 %m月 %d日")  %></td>
+   <td><%= reservation.enddate.strftime("%Y年 %m月 %d日")  %></td>
+   <td><%= reservation.created_at.to_s(:datetime_jp) %></td>
+   <% if current_user.id == reservation.user_id %>
+   <td><%= link_to '削除する', reservation_path(reservation), method: :delete, class: 'btn btn-danger', data: { confirm: "本当に削除しますか？" } %></td>
+   <% end %>
+  </td>
+   <% end %>
+   
+ </table>

@@ -1,0 +1,22 @@
+<h2>部屋</h2>
+
+<div class="container">
+ <div class="row">
+  <div class="col-8">
+ 
+<%= attachment_image_tag @room, :roomimage, fallback: "no_image_logo.png", size: '620x420' %>
+</br>
+<%= link_to attachment_image_tag( current_user, :profileimage, fallback: "no_img.png", size: '80x80', class: "aicon"), root_path %>
+<%= @room.id %>
+<%= @room.user_id %>
+<%= @room.roomname %>
+<%= @room.roomprofile %>
+<%= @room.address %>
+ </div>
+ <div class="col-4">
+  <h3>￥<%= @room.price %> /日</h3>
+  <%= render "reservations/new" %>
+ </div>
+ 
+ </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-4">
+  </div>
+
+<div class="editview">
+ <h3>アカウント編集</h3>
+<table>
+ <tbody>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+  <tr>
+   <td><%= f.label :メールアドレス %></td>
+  </tr>
+  <tr>
+   <td><%= f.email_field :email, autofocus: true, autocomplete: "email", maxlength: "50", size: "50", class: 'form-control' %></td>
+  </tr>
+  <tr>
+   <td><%= f.label :変更後パスワード（変更する場合のみ入力） %></td>
+  </tr>
+  <tr>
+   <td><%= f.password_field :password, autofocus: true, autocomplete: "new-password", maxlength: "50", size: "50", class: 'form-control' %></td>
+  </tr> 
+  <tr>
+   <td><%= f.label :パスワード確認用（変更する場合のみ入力）%></td>
+  </tr>
+  <tr>
+   <td><%= f.password_field :password_confirmation, autocomplete: "new-password", maxlength: "50", size: "50", class: 'form-control' %></td>
+  </tr>
+  <tr>
+   <td><%= f.label :現在のパスワード）%></td>
+  </tr>
+  <tr>
+   <td><%= f.password_field :current_password, autocomplete: "current-password", maxlength: "50", size: "50", class: 'form-control' %></td>
+  </tr>
+  <tr>
+   <td></br></td>
+  </tr>
+  <tr>
+   <td><%= f.submit "更新", class: 'btn btn-primary' %></td>
+  <% end %>
+  </tr>
+  <tr>
+   <td></br></td>
+  </tr>
+  <tr>
+   <td><%= link_to '戻る', account_path, class: "btn btn-outline-secondary" %></td>
+  </tr>
+  </tbody>
+</table>
+
+ 

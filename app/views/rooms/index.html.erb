@@ -1,0 +1,39 @@
+<div class ="container">
+ <h3>部屋一覧</h3>
+<div class ="count">
+ <% if @keyword != nil && @keyword != "" %>
+ キーワード検索結果:<%= Room.search(params[:keyword]).ids.count %>件
+ <% elsif @area != nil && @area != "" %>
+ エリア検索結果:<%= Room.search(params[:area]).ids.count %>件
+ <% elsif @keyword == "" || @area == "" %>
+ 全検索結果:<%= Room.all.ids.count %>件
+ <% else%>
+ 検索できませんでした
+ <% end %>
+ </div>
+
+  <%= paginate @rooms %>
+  <div class="row">
+  <% @rooms.each do |room| %>
+  <div class="col-md-3">
+  
+  <%= link_to room_path(room), class: "roomarea" do %>
+   <div class="roomarea">
+    
+    </br>
+   <%= attachment_image_tag room, :roomimage, fallback: "no_image_logo.png", size: '280x160' %>
+   </br>
+   <div class="roomname">
+   <%= room.roomname %>
+   </div>
+   <div class="address"><%= room.address %></div>
+    <div class="price">￥<%= room.price %></div>
+  
+   </div>
+   <% end %>
+    
+  
+   </div>
+   <% end %>
+   </div>
+   </div>

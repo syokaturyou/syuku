@@ -1,0 +1,36 @@
+  <%= render "shared/error", obj: @reservation %>
+  
+  
+  <table class="acounttable">
+   <tbody>
+    <%= form_with model: @reservation, url: confirm_path, method: :post, local: true do |f| %>
+    <tr>
+     <td><%= f.label :startdate ,"開始日" %>
+         <%= f.date_field :startdate, autofocus: true, class: 'form-control' %>
+      </td>
+    </tr>
+    <tr>
+     <td><%= f.label :enddate ,"終了日" %>
+         <%= f.date_field :enddate, class: 'form-control' %>
+     </td>
+    </tr>
+    <tr>
+     <td><%= f.label :使用人数 %>
+         <%= f.number_field :human, class: 'form-control' %>
+     </td>
+    </tr>
+    <% if user_signed_in? %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :room_id, :value => @room.id %>
+    <%= f.hidden_field :price, :value => @room.price %>
+    <tr>
+     <td><%= f.submit "確認画面へ進む", class: 'btn btn-primary', data: {"turbolinks"=>false} %></td>
+    </tr>
+    <% else %>
+    <tr>
+     <td><%= link_to 'ログイン', new_user_session_path, class: 'btn btn-primary' %></td>
+    </tr>
+    <% end %>
+    <% end %>
+   </tbody>
+  </table>

@@ -1,0 +1,37 @@
+<header>
+<div class="hed">
+ <%= link_to image_tag("logo.png"), root_path, data: {"turbolinks"=>false} %>
+ 
+ <div class="areaaicon">
+  <%= form_with url: rooms_search_path, method: :get, local: true do |f| %>
+    <%= f.text_field :area, value: @area, :placeholder => "エリア", size:'20x10' %>
+  <% end %>
+ </div>
+
+ <div class="keywordaicon">
+  <%= form_with url: rooms_search_path, method: :get, local: true do |f| %>
+    <%= f.text_field :keyword, value: @keyword, :placeholder => "キーワード", size:'20x10' %>
+  <% end %>
+ </div>
+
+<div class="user">
+<% if user_signed_in? %>
+ <%= current_user.name %>
+  <a data-toggle="dropdown" ><%= attachment_image_tag current_user, :profileimage, fallback: "no_img.png", size: '60x60', class: "aicon" %></a>
+  <ul class="dropdown-menu">
+   <li><%= link_to 'ルーム登録', new_room_path, class: 'link', data: {"turbolinks"=>false} %></li>
+   <li><%= link_to '予約済みルーム一覧', reservations_path, class: 'link', data: {"turbolinks"=>false} %></li> 
+   <li><%= link_to '登録済みルーム一覧', posts_path, class: 'link', data: {"turbolinks"=>false} %></li>
+   <li><%= link_to '設定', account_path, class: 'link', data: {"turbolinks"=>false} %></li>
+   <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'link' %></li>
+  </ul>
+<% else %>
+<div class="loginaicon">
+ <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-primary' %>
+ <%= link_to '登録する', new_user_registration_path, class: 'btn btn-secondary' %>
+</div>
+<% end %>
+</div>
+
+</div>
+</header>
