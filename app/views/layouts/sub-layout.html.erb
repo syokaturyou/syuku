@@ -16,12 +16,14 @@
   </head>
 <body>
    <%= render 'layouts/header' %>
-   <main class="main"> 
+ <main class="main2"> 
    <% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
- <% end %>
+    <div class="notice"><%= flash[:notice] %></div>
+   <% end %>
      <%= yield %> 
    </main>
-   <%= render 'layouts/footer' %>
+    <footer class="footer2"> 
+     <p>© 2020 POTEPAN.INC.</p>
+    </footer> 
   </body>
 </html>

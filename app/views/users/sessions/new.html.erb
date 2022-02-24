@@ -1,29 +1,36 @@
-
-   <div class="field">
+<div class="row">
+  <div class="col-3">
+  </div>
+  <div class="col-9">
     <h3>ログイン</h3>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <table>
+    <table class="subtable">
       <tbody>
         <tr>
-          <th><div class="aa">必須</div></th>
+          <td><div class="aa">必須</div></td>
           <td><%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "メールアドレス", size: '30' %></td>
         </tr>
         <tr>
-          <th><div class="aa">必須</div></th>
+          <td><div class="aa">必須</div></td>
           <td><%= f.password_field :password, autocomplete: "current-password", :placeholder => "パスワード", size: '30' %></td>
         </tr>
         <tr>
-          <th></th>
+          <td></td>
           <td><%= f.submit "ログイン", class: 'btn btn-primary' %></td>
         </tr>
         <% end %>
         <tr>
-          <th></th>
+          <td></td>
           <td><%= link_to '新しいアカウントを作成', new_user_registration_path %></td>
         </tr>
       </tbody>
-    <table>
+    </table>
+   </div>
   </div>
+
+ 
+  
+
 
 
  
