@@ -12,8 +12,8 @@ class ReservationsController < ApplicationController
   
   def confirm
     @reservation = Reservation.new(reservation_params)
-    @reservation.totalprice = (@reservation.enddate - @reservation.startdate).to_int * @reservation.human * @reservation.price
     if @reservation.valid? # バリデーションを手動でチェック
+      @reservation.totalprice = (@reservation.enddate - @reservation.startdate).to_int * @reservation.human * @reservation.price
       render "confirm"
     else
       @room = Room.find(@reservation.room_id)
@@ -40,6 +40,7 @@ class ReservationsController < ApplicationController
     reservation = Reservation.find(params[:id])
     reservation.user_id = current_user.id
     reservation.destroy
+    flash[:notice] = "削除しました"
     redirect_back(fallback_location: root_path)
   end
   
