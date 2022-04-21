@@ -15,16 +15,13 @@
  */
  
  @import "bootstrap";
-
  header {
    width: 100%;
    min-height: 70px;
    background-color: black;
-   
       .hed {
       display: flex;
       margin: auto;
-    
      .keywordaicon {
       position: relative;
       padding: 15px 0;
@@ -43,7 +40,6 @@
       .keywordaicon input {
         padding: 3px 0 3px 2em; /* アイコンを設置するため左の余白を多めに指定*/
       }
-     
       .areaaicon {
       position: relative;
       padding: 15px 0;
@@ -62,20 +58,16 @@
       .areaaicon input {
         padding: 3px 0 3px 2em; /* アイコンを設置するため左の余白を多めに指定*/
       }
-    
     .user {
      color: white;
      margin-left: auto;
     }
-    
     .loginaicon {
       padding: 15px 0;
       line-height: 30px;
     }
-    
    }
  }
- 
   footer {
    width: 100%;
    min-height: 180px;
@@ -85,18 +77,15 @@
    text-align: center;
    bottom: 10%;
  }
-
  .main {
  min-height: 600px;
  height: 900px;
  width: 100%;
  background-color: white;
 }
-
  .notice {
     background-color: lightBlue;
 }
-
 /* ページネーション */
 .pagination {
   justify-content: center;
@@ -114,7 +103,6 @@
   background-color: green;
   border-radius: 10px;
 }
-
 .nyu {
  width: 150px;
 }
@@ -126,7 +114,6 @@
 .nyu3 {
  color: black;
 }
-
 .top{
  min-height: 550px;
  width: 100%;
@@ -160,22 +147,18 @@
     min-width: 70px;
     vertical-align: top;
    }
-    
    }
 }
-
 .under {
  left: 30%;
  display: flex;
  min-height: 350px;
  background-color: white;
  padding: 40px 0;
- 
  .h1{
  min-width: 700px;
  min-height: 100px;
 }
- 
  img {
     vertical-align: middle;
     border-style: none;
@@ -189,8 +172,6 @@
    height: 300px;
   }
 }
-
-
 .bbb {
  font-size: 18px;
  text-align: center;
@@ -225,7 +206,6 @@
       }
     }
   }
-
   .editview{
    text-align: center;
    min-height: 600px;
@@ -235,21 +215,17 @@
     border: 2px solid #e2e2e2;
    }
   }
-  
   a:link {
    color: #000000;
    text-decolation: none;
   }
-  
   .dropdown-menu {
    padding: 15px;
   }
-  
   .aicon {
    border-radius: 40px;
    text-align: center;
   }
-  
  .link {
     text-decoration: none;
     color: black; 
@@ -258,7 +234,6 @@
     text-decoration: none;
     color: black; 
   }
-  
   .acounttable {
    .btn {
     width: 100%;
@@ -275,23 +250,19 @@
     color: #fff;
    }
   }
-  
    table.acounttable td:nth-child(2){
    min-width: 560px;
    max-width: 700px;
    text-align: center;
  }
-
   .acounttable th{
     min-width: 40px;
   }
-  
   .acounttable td{
     min-width: 340px;
     height: 90px;
     padding: 10px;
   }
-  
   .profiletable {
    .lable {
     background-color: red;
@@ -308,46 +279,37 @@
     color: #fff;
    }
   }
-
   .profiletable td{
     min-width: 700px;
     padding: 3px;
   }
-  
   .posttable {
    border: 2px #C0C0C0 solid;
    margin: 10px 30px;
   }
-  
   .posttable td{
     min-width: 120px;
     text-align: center;
     padding: 3px;
   }
-  
    table.posttable tr:nth-child(1){
     border: 2px #C0C0C0 solid;
     text-align: center;
     background-color: #99FFCC;
   }
-  
   table.posttable td:nth-child(1){
     min-width: 360px;
     text-align: center;
   }
-  
   table.posttable td:nth-child(2){
     font-size: 18px;
     text-decoration: underline;
   }
-  
   .posttable th{
     min-width: 120px;
     text-align: center;
     padding: 3px;
   }
-
-
   .roomarea {
    margin: 10px 10px;
    width: 280px;
@@ -368,14 +330,10 @@
     margin: 5px 10px;
     font-size: 1.5rem;
    }
-   
   }
-  
   .count {
    font-size: 24px;
   }
-
-
   .complete {
    background-color: #F6F8F9;
    width: 100%;
@@ -390,20 +348,15 @@
         top: 5%;
       }
   }
-  
    .reservationtable {
     widht: 100%;
   }
-  
   .reservationtable th {
     min-width: 200px;
     padding: 3px;
   }
-
    .reservationtable td {
     min-width: 380px;
     padding: 3px;
   }
-
-
 @import './sub-layouts'
